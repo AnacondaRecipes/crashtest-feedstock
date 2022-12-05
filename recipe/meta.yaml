@@ -21,7 +21,8 @@ requirements:
   host:
     - pip
     - python >=3.6,<4.0
-    - poetry-core >=1.0.0a5
+    - setuptools
+    - wheel
   run:
     - python >=3.6,<4.0
 
@@ -29,6 +30,7 @@ test:
   imports:
     - crashtest
     - crashtest.contracts
+    - crashtest.solution_providers
   commands:
     - pip check
   requires:
