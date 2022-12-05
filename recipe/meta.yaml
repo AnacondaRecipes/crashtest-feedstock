@@ -11,7 +11,7 @@ source:
   sha256: 42ca7b6ce88b6c7433e2ce47ea884e91ec93104a4b754998be498a8e6c3d37dd
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - rm -f pyproject.toml
@@ -21,7 +21,7 @@ requirements:
   host:
     - pip
     - python >=3.6,<4.0
-    - poetry
+    - poetry-core >=1.0.0a5
   run:
     - python >=3.6,<4.0
 
@@ -35,10 +35,14 @@ test:
     - pip
 
 about:
-  home: https://pypi.org/project/crashtest/
+  home: https://github.com/sdispater/crashtest
   summary: Manage Python errors with ease
+  description: Crashtest is a Python library that makes exceptions handling and inspection easier.
   license: MIT
   license_file: LICENSE
+  license_family: MIT
+  dev_url: https://github.com/sdispater/crashtest
+  doc_url: https://github.com/sdispater/crashtest/blob/master/README.md
 
 extra:
   recipe-maintainers:
