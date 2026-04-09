@@ -10,10 +10,11 @@ source:
   sha256: 80d7b1f316ebfbd429f648076d6275c877ba30ba48979de4191714a75266f0ce
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<38]
   script:
-    - rm -f pyproject.toml
+    - if exist pyproject.toml del /f /q pyproject.toml   # [win]
+    - rm -f pyproject.toml                               # [unix]
     - {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
