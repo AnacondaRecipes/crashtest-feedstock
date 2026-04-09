@@ -13,7 +13,8 @@ build:
   number: 2
   skip: true  # [py<38]
   script:
-    - rm -f pyproject.toml
+    - if exist pyproject.toml del /f /q pyproject.toml   # [win]
+    - rm -f pyproject.toml                               # [unix]
     - {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
